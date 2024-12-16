@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sonido</title>
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+    <script>
+        AFRAME.registerComponent('controlAudio',{
+            init:function (){
+                let controlButton= this.el;
+                controlButton.addeEventListener('click', function(ev){
+                    let method = ev.srcElement.id;
+                    
+                    console.log(method);
+
+                    let speaker = document.querySelector ('#its_time');
+                     if (method == "play"){
+                        speaker.components.sound.playSound();
+                     }
+                     if (method == "pause"){
+                        speaker.components.sound.pauseSound();
+                     }
+                     if (method == "stop"){
+                        speaker.components.sound.stopSound();
+                     }
+                })
+            }
+        })
+    </script>
+</head>
+<body>
+    <a-scene>
+        <!--sistemas de gestión de assets-->
+        <a-assets>
+            <audio id="its_time" src="assets/Mariah-Carey-IT_S-TIME__.mp3" preload="auto"></audio>
+        </a-assets>
+
+        <!--jugador-->
+        <a-camera>
+            <a-cursor></a-cursor>
+        </a-camera>
+
+        <!--sonido-->
+        <a-entity id="its_time" geometry="primitive: plane" material="color: blue"
+          position="0 0.5 -4" sound= "src:#its_time; autoplay: false; on:click;"></a-entity>
+
+
+        <!--controles-->
+        <a-box id="play" color="blue" position="-1 0.2 -3" scale="0.3 0.3 0.3" controlAudio></a-box>
+        <a-box id="pause" color="red" position="0 0.2 -3" scale="0.3 0.3 0.3" controlAudio></a-box>
+        <a-box id="stop" color="black" position="1 0.2 -3" scale="0.3 0.3 0.3" controlAudio></a-box>
+    </a-scene>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>video control</title>
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+    <script>
+       AFRAME.registerComponent('play-pause', {
+            init: function() {
+                var myVideo = document.querySelector('#video');
+                var videoControls = document.querySelector('#videoControls');
+                this.el.addEventListener('click', function() {
+                    if (myVideo.paused) {
+                        myVideo.play();
+                        videoControls.setAttribute('src', '#pause');
+                    } else {
+                        myVideo.pause();
+                        videoControls.setAttribute('src', '#play');
+                    }
+                });
+            }
+        });
+           
+    </script>
+</head>
+<body>
+
+    <!--assets-->
+    <a-scene background="color:#d6b146">
+        <a-assets>
+            <img id="pause" src="assets/botón.png">
+            <img id="play" src="assets/botón2.png">
+            <video id="video" loop="true" src="assets/VID-20231221-WA0070.mp4"></video>
+        </a-assets>
+       
+
+    <!--camera-->
+    <a-camera>
+        <a-cursor></a-cursor>
+    </a-camera>
+
+    <!--video,imágenes-->
+    <a-video src="#video" position="0 3 -4" width="8" height="10">
+        <a-image id="videoControls" src="#play" position="-4 -5 0.5" scale="2 2 2" play-pause></a-image>
+    </a-video>
+
+</a-scene>
+
+</body>
+</html>
