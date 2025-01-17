@@ -5,31 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sonido</title>
     <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
-    <script>
-        AFRAME.registerComponent('controlAudio',{
-            init:function (){
-                let controlButton= this.el;
-                controlButton.addeEventListener('click', function(ev){
-                    let method = ev.srcElement.id;
-                    
-                    console.log(method);
-
-                    let speaker = document.querySelector ('#its_time');
-                     if (method == "play"){
-                        speaker.components.sound.playSound();
-                     }
-                     if (method == "pause"){
-                        speaker.components.sound.pauseSound();
-                     }
-                     if (method == "stop"){
-                        speaker.components.sound.stopSound();
-                     }
-                })
-            }
-        })
-    </script>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.5.2/dist/aframe-extras.min.js"></script>
 </head>
 <body>
+    <script>
+        AFRAME.registerComponent('controlaudio', {
+            init: function(){
+                let botonControl= this.el;
+                botonControl.addEventListener('click', function (ev){
+                    let metodo = ev.srcElement.id;
+
+                    console.log(metodo);
+
+                    let bocina = document.querySelector('#its_time');
+
+                    if(metodo =="play"){
+                    bocina.components.sound.playSound();
+                    }
+                    if(metodo =="pause"){
+                    bocina.components.sound.pauseSound();
+                    }
+                    if(metodo =="stop"){
+                    bocina.components.sound.stopSound();
+                    }
+                });
+            }
+        });
+    </script>
     <a-scene>
         <!--sistemas de gestión de assets-->
         <a-assets>
@@ -43,13 +45,13 @@
 
         <!--sonido-->
         <a-entity id="its_time" geometry="primitive: plane" material="color: blue"
-          position="0 0.5 -4" sound= "src:#its_time; autoplay: false; on:click;"></a-entity>
+          position="0 0.5 -4" sound= "src:#its_time;"></a-entity>
 
 
         <!--controles-->
-        <a-box id="play" color="blue" position="-1 0.2 -3" scale="0.3 0.3 0.3" controlAudio></a-box>
-        <a-box id="pause" color="red" position="0 0.2 -3" scale="0.3 0.3 0.3" controlAudio></a-box>
-        <a-box id="stop" color="black" position="1 0.2 -3" scale="0.3 0.3 0.3" controlAudio></a-box>
+        <a-box id="play" color="blue" position="-1 0.2 -3" scale="0.3 0.3 0.3" controlaudio></a-box>
+        <a-box id="pause" color="red" position="0 0.2 -3" scale="0.3 0.3 0.3" controlaudio></a-box>
+        <a-box id="stop" color="black" position="1 0.2 -3" scale="0.3 0.3 0.3" controlaudio></a-box>
     </a-scene>
 </body>
 </html>

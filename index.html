@@ -3,20 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entorno</title>
+    <title>Proyecto final</title>
     <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.5.2/dist/aframe-extras.min.js"></script>
 </head>
 <body>
-     <a-scene>
-       <a-entity  geometry= "primitive:cylinder;" material="color:#80d4ff" position="-9 1 0" scale="5 7 5" 
-       rotation="0 0 0"></a-entity> 
-       <a-entity environment="preset: forest; dressingAmount: 700; horizonColor:orange; 
-       skyType: gradient; skyColor:#d9b3ff"></a-entity>
-    <a-entity geometry="primitive:sphere;" material="src:assets/mármol.png" position="9 4 0" scale="5 9 3" rotation="30 1 1"></a-entity>
-        <a-entity text="value: Bienvenidos a la Galería Floralis; font:assets\fonts\abastina-msdf.json; 
-        fontImage:assets\fonts\abastina.png; negate:false; color:black" 
-        scale="8 8 8" position="1 4 1"></a-entity>
+    <a-scene>
+        <a-entity environment="preset: starry; skyType: color; skyColor: #000000; 
+        horizonColor: #000000; ground: flat; groundColor: #000000; grid: 1x1; gridColor: #39d2f2;"></a-entity>
+
+        <a-box src="assets/edificio.jpg" height="70" width="15" depth="15" position="11.2621 25.037 -3.3921"></a-box>
+        <a-box src="assets/edificio.jpg" height="40" width="10" depth="10" position="-18.54069 17.00851 -26.89059"></a-box>
+        <a-box src="assets/edificio.jpg" height="55" width="15" depth="15" position="24.30446 25.037 -40.71696"></a-box>
+        <a-box src="assets/edificio.jpg" height="70" width="10" depth="10" position="47.40092 25.037 -3.3921"></a-box>
+        <a-box src="assets/edificio.jpg" height="60" width="15" depth="15" position="-40.82354 25.037 -3.3921"></a-box>
+        <a-box src="assets/edificio.jpg" height="70" width="12" depth="12" position="-47.58995 25.037 -33.82365"></a-box>
+        <a-box src="assets/edificio.jpg" height="70" width="15" depth="15" position="11.2621 25.037 -68.76243"></a-box>
+        <a-box src="assets/edificio.jpg" height="30" width="8" depth="8" position="-10.2087 14.627 -44.44596"></a-box>
+        <a-box src="assets/edificio.jpg" height="70" width="15" depth="15" position="-34.67335 25.037 -61.46413"></a-box>
+        <a-box src="assets/edificio.jpg" height="70" width="15" depth="15" position="-67.57228 25.037 -31.1523"></a-box>
+        <a-box src="assets/edificio.jpg" height="70" width="15" depth="15" position="55.06029 25.037 -53.44258"></a-box>
+        <a-box src="assets/edificio.jpg" height="70" width="15" depth="15" position="-70.39258 25.037 22.65797"></a-box>
+        <a-box src="assets/edificio.jpg" height="70" width="15" depth="15" position="56.74223 25.037 17.09228"></a-box>
+
+        <a-image src="assets\pantalla.jpg" position="-1.2982 25.20686 33.058" scale="70 50 100" rotation=" 0 180 0"></a-image>
+
+        <a-assets>
+            <a-assets-item id="niño" src="assets\niño.glb"></a-assets-item>
+            <a-assets-item id="persona" src="assets\persona.glb"></a-assets-item>
+            <a-assets-item id="robot" src="assets\robotcuento.glb"></a-assets-item>
+            <audio id="música" autoplay src="assets\Night Walks.mp3"></audio>
+        </a-assets>
+        
+        <a-audio src="#música" position="22.503 6.337 -29.69788"></a-audio>
+
+        <a-entity gltf-model="assets\niño.glb" position="-1.26759 2.12822 28.44499" scale="" visible="" rotation="0.9740282517223996 -90 2.5949258541474984"></a-entity>
+        <a-entity gltf-model="assets\robotcuento.glb" position="-4.63815 2.69081 28.445" scale="" visible="" rotation="0.974 90 2.595"></a-entity>
+
+        <a-entity gltf-model="assets\persona.glb" position="18.23409 2.69081 14.24481" scale="" visible="" rotation="0.974 29.999999999999996 2.595"></a-entity>
+        <a-entity gltf-model="assets\persona.glb" position="-1.29009 2.69081 6.16852" scale="" visible="" rotation="0.974 90 2.595"></a-entity>
+        <a-entity gltf-model="assets\persona.glb" position="-1.0264 2.69081 2.15962" scale="" visible="" rotation="0.974 90 2.595"></a-entity>
+        <a-entity gltf-model="assets\persona.glb" position="-0.34872 2.669 -1.80523" scale="" visible="" rotation="0.974 90 2.595"></a-entity>
+        <a-entity gltf-model="assets\persona.glb" position="1.51209 2.69081 -2.25494" scale="" visible="" rotation="0.974 0 2.595"></a-entity>
+        <a-entity gltf-model="assets\persona.glb" position="-31.04931 2.69081 -1.528" scale="" visible="" rotation="0.974 29.999999999999996 2.595"></a-entity>
+        <a-entity gltf-model="assets\persona.glb" position="-9.16921 2.69081 -9.89358" scale="" visible="" rotation="0.974 90 2.595"></a-entity>
+        <a-entity gltf-model="assets\persona.glb" position="-18.63338 2.69081 -18.8694" scale="" visible="" rotation="0.974 90 2.595"></a-entity>
+        <a-entity gltf-model="assets\persona.glb" position="-10.1678 2.69081 -37.9556" scale="" visible="" rotation="0.974 90 2.595"></a-entity>
+        <a-entity gltf-model="assets\persona.glb" position="-28.59875 2.69081 -15.45201" scale="" visible="" rotation="0.974 130 2.595"></a-entity>
+        <a-entity gltf-model="assets\persona.glb" position="-32.22041 2.69081 -28.37299" scale="" visible="" rotation="0.974 90 2.595"></a-entity>
+        <a-entity gltf-model="assets\persona.glb" position="-41.76238 2.69081 -19.80333" scale="" visible="" rotation="0.974 50 2.595"></a-entity>
+        <a-entity gltf-model="assets\persona.glb" position="12.75879 2.69081 -26.8542" scale="" visible="" rotation="0.974 29.999999999999996 2.595"></a-entity>
+        <a-entity gltf-model="assets\persona.glb" position="-67.80775 2.69081 -21.39523" scale="" visible="" rotation="0.974 90 2.595"></a-entity>
+        <a-entity gltf-model="assets\persona.glb" position="31.60172 2.69081 -18.8694" scale="" visible="" rotation="0.974 20 2.595"></a-entity>
+        <a-entity gltf-model="assets\persona.glb" position="54.11982 2.69081 -33.33384" scale="" visible="" rotation="0.974 90 2.595"></a-entity>
+        <a-entity gltf-model="assets\persona.glb" position="2.82672 2.69081 -44.33097" scale="" visible="" rotation="0.974 90 2.595"></a-entity>
+        <a-entity gltf-model="assets\persona.glb" position="-50.67738 2.691 11.99477" scale="" visible="" rotation="0.974 29.999999999999996 2.595"></a-entity>
+        <a-entity gltf-model="assets\persona.glb" position="37.75283 2.69081 -47.39476" scale="" visible="" rotation="0.974 90 2.595"></a-entity>
+        <a-entity gltf-model="assets\persona.glb" position="-32.66247 2.691 -45.33582" scale="" visible="" rotation="0.974 50 2.595"></a-entity>
+
+        <a-text value="Google" font="assets\fonts\abastina-msdf.json" font-image="assets\fonts\abastina.png" color="white" negate="false" scale="5 4 1" position="3.45114 9.15742 -5.48362" rotation="0 -90 0"></a-text>
+        <a-text value="Blender" font="assets\fonts\abastina-msdf.json" font-image="assets\fonts\abastina.png" color="white" negate="false" scale="5 4 1" position="-20.54672 7.88475 -21.68325"></a-text>
+        <a-text value="Word" font="assets\fonts\abastina-msdf.json" font-image="assets\fonts\abastina.png" color="white" negate="false" scale="5 4 1" position="-33.20493 7.88893 -1.22464" rotation="0 90 0"></a-text>
+        <a-text value="Documentos" font="assets\fonts\abastina-msdf.json" font-image="assets\fonts\abastina.png" color="white" negate="false" scale="5 4 1" position="-14.44125 11.7 -38.57949"></a-text>
+        <a-text value="Spotify" font="assets\fonts\abastina-msdf.json" font-image="assets\fonts\abastina.png" color="white" negate="false" scale="5 4 1" position="-49.31959 11.7 -27.53073"></a-text>
+        <a-text value="Configuración" font="assets\fonts\abastina-msdf.json" font-image="assets\fonts\abastina.png" color="white" negate="false" scale="5 4 1" position="-70.75293 11.7 -23.4698"></a-text>
+        <a-text value="Paint" font="assets\fonts\abastina-msdf.json" font-image="assets\fonts\abastina.png" color="white" negate="false" scale="5 4 1" position="-35.68677 11.7 -53.92122"></a-text>
+        <a-text value="Gmail" font="assets\fonts\abastina-msdf.json" font-image="assets\fonts\abastina.png" color="white" negate="false" scale="5 4 1" position="9.7217 11.7 -60.82832"></a-text>
+        <a-text value="Firefox" font="assets\fonts\abastina-msdf.json" font-image="assets\fonts\abastina.png" color="white" negate="false" scale="5 4 1" position="16.4432 13.89383 -42.62228" rotation="0 -90 0"></a-text>
+        <a-text value="Microsoft store" font="assets\fonts\abastina-msdf.json" font-image="assets\fonts\abastina.png" color="white" negate="false" scale="5 4 1" position="-62.85579 11.7 26.22649" rotation="0 90 0"></a-text>
+        <a-text value="Adobe" font="assets\fonts\abastina-msdf.json" font-image="assets\fonts\abastina.png" color="white" negate="false" scale="5 4 1" position="23.01825 11.7 -32.88425"></a-text>
+        <a-text value="PowerPoint" font="assets\fonts\abastina-msdf.json" font-image="assets\fonts\abastina.png" color="white" negate="false" scale="5 4 1" position="48.89293 10.46755 12.94504" rotation="0 -90 0"></a-text>
+
+        <a-entity id="rig"
+    movement-controls="constrainToNavMesh: true;
+            controls: checkpoint, gamepad, trackpad, keyboard, nipple;"
+    position="-1 0 20">
+<a-entity camera
+          position="0 3 0"
+          look-controls="pointerLockEnabled: true">
+  <a-cursor></a-cursor>
+</a-entity>
+</a-entity>
+
+
+
+
     </a-scene>
 </body>
 </html>
